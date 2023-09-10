@@ -1,0 +1,65 @@
+@use "../globals/colors" as c;
+@use "../util/breakpoints" as u;
+
+.header {
+  color: c.$dark-primary;
+  // TOP NAV
+  &__top-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-width: 100%;
+    padding: 0 4.8rem;
+  }
+  &__heading {
+    font-size: 3.2rem;
+  }
+  &__icon {
+    width: 3rem;
+    height: 3rem;
+    font-size: 2.4rem;
+    color: black;
+    cursor: pointer;
+  }
+  &__icons-container {
+    display: flex;
+    gap: 2.4rem;
+  }
+  // NAV
+  &__nav {
+    height: 6.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &__list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3.6rem;
+    list-style-type: none;
+    @include u.breakpoint(medium) {
+      display: none;
+    }
+  }
+  &__list-item {
+    font-size: 1.8rem;
+    letter-spacing: 0.5px;
+  }
+  &__divider {
+    border-bottom: 1px solid c.$gray;
+  }
+
+  &__menu-icon {
+    display: none;
+    @include u.breakpoint(medium) {
+      display: block;
+    }
+  }
+  &__user-icon,
+  &__cart-icon {
+    @include u.breakpoint(medium) {
+      display: none;
+    }
+  }
+}

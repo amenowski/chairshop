@@ -1,0 +1,38 @@
+@use "colors" as c;
+@use "../util/breakpoints" as u;
+@import url("https://fonts.googleapis.com/css2?family=Geologica:wght@400;500;600;700&family=Open+Sans:wght@400;700&display=swap");
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+
+  @include u.breakpoint(large) {
+    font-size: 56.25%;
+  }
+  @include u.breakpoint(medium) {
+    font-size: 50%;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  font-family: "Geologica", sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background-color: c.$white;
+  color: c.$dark-primary;
+}
+
+.container {
+  width: min(100% - 12.6rem, 144rem);
+  margin-inline: auto;
+  @include u.breakpoint(medium) {
+    width: min(100% - 3.2rem, 144rem);
+  }
+}

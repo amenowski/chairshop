@@ -1,0 +1,58 @@
+@use "../globals/colors" as c;
+@use "../util/breakpoints" as u;
+
+.hero {
+  padding: 4.8rem 0 6.4rem 0;
+  &__content {
+    display: grid;
+    grid-template-columns: 1fr 0.8fr;
+    background-color: c.$dark-primary;
+    column-gap: 4.8rem;
+    @include u.breakpoint(xlarge) {
+      grid-template-columns: 1fr;
+    }
+    @include u.breakpoint(medium) {
+      width: min(100% - 0rem, 144rem);
+    }
+  }
+  &__text-container {
+    height: 100%;
+    width: 100%;
+    padding: 4.8rem;
+    display: flex;
+    flex-direction: column;
+    align-self: flex-start;
+    // PROBLEM Z USTAWIENIEM DESCRIPTION NA DOLE
+    justify-content: space-between;
+  }
+  &__heading {
+    font-size: 3.6rem;
+    color: #fff;
+    margin-bottom: 6.4rem;
+  }
+  &__btn {
+    // align-self: flex-start;
+    background-color: #4e4d9393;
+    color: white;
+    @include u.breakpoint(medium) {
+      width: 100%;
+    }
+  }
+  &__description {
+    color: c.$white;
+    font-size: 2rem;
+    line-height: 3rem;
+    @include u.breakpoint(xlarge) {
+      margin-top: 4.8rem;
+    }
+  }
+  // IMAGE
+
+  &__image {
+    width: 100%;
+    display: block;
+    @include u.breakpoint(xlarge) {
+      display: none;
+    }
+  }
+}

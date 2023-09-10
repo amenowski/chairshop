@@ -1,0 +1,78 @@
+@use "../globals/colors" as c;
+@use "../util/breakpoints" as u;
+
+.footer {
+  background-color: c.$dark-primary;
+  padding: 4.8rem 0 1.6rem 0;
+  color: c.$gray;
+  &__nav-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    @include u.breakpoint(xlarge) {
+      grid-template-columns: 1fr;
+      row-gap: 4.6rem;
+    }
+    column-gap: 9.6rem;
+    padding: 0 0 4.8rem 0;
+  }
+  &__nav {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    @include u.breakpoint(xlarge) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    list-style: none;
+  }
+  &__list-item {
+    font-size: 1.6rem;
+  }
+  &__list-item:first-child {
+    font-size: 1.8rem;
+  }
+  &__form-heading {
+    font-size: 1.6rem;
+  }
+  &__form {
+    display: flex;
+  }
+  &__mail {
+    width: 80%;
+    padding: 1.6rem 2.4rem;
+    border: none;
+    outline: none;
+    background-color: #4e4d934f;
+    font-size: 1.8rem;
+    color: c.$gray;
+  }
+  &__btn {
+    width: 20%;
+    border: none;
+    background-color: c.$white;
+    color: c.$dark-primary;
+    font-size: 1.8rem;
+    cursor: pointer;
+  }
+  &__divider {
+    border: 1px solid c.$gray;
+  }
+  &__information-container {
+    padding: 2.4rem 0 0 0;
+    display: flex;
+    justify-content: space-between;
+  }
+  &__information {
+    font-size: 1.6rem;
+  }
+  &__icons-container {
+    display: flex;
+    gap: 1.6rem;
+  }
+  &__icon {
+    font-size: 2.4rem;
+  }
+}

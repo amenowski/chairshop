@@ -1,0 +1,48 @@
+@use "../globals/colors" as c;
+@use "../util/breakpoints" as u;
+
+.testimonials {
+  padding: 4.8rem 0 6.4rem 0;
+  &__content {
+    display: flex;
+    flex-direction: column;
+    color: c.$dark-primary;
+  }
+  &__heading {
+    font-size: 2.6rem;
+    text-align: center;
+    font-weight: normal;
+    margin-bottom: 7.4rem;
+    letter-spacing: 1;
+  }
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    @include u.breakpoint(xlarge) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include u.breakpoint(medium) {
+      grid-template-columns: 1fr;
+    }
+  }
+  &__block {
+    @include u.breakpoint(large) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+    }
+  }
+  &__block-heading {
+    font-size: 2.4rem;
+    font-weight: normal;
+  }
+  &__description {
+    font-size: 1.6rem;
+    line-height: 1.5;
+  }
+  &__icon {
+    width: 3.6rem;
+    height: 3.6rem;
+  }
+}
